@@ -8,7 +8,7 @@ jobs:
     if: github.repository == 'MiriamMarxOL/trainingdays'
     runs-on: ubuntu-latest
     env:
-      RG_DEV: rg-scm-devday4
+      RG_DEV: miriuk
       RG_TEST: rg-scm-testday4
 
     steps:

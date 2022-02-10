@@ -148,8 +148,8 @@ jobs:
       indexerFunctionName: ${{ steps.infrastructure.outputs.indexerFunctionName }}
 
     env:
-      RESOURCE_GROUP_NAME: rg-scm-devday4
-      RESOURCE_GROUP_LOCATION: westeurope
+      RESOURCE_GROUP_NAME: miriuk
+      RESOURCE_GROUP_LOCATION: uksouth
       ENV_NAME: devd4
 
     steps:
@@ -244,7 +244,7 @@ jobs:
 
     env:
       RESOURCE_GROUP_NAME: rg-scm-testday4
-      RESOURCE_GROUP_LOCATION: westeurope
+      RESOURCE_GROUP_LOCATION: uksouth
       ENV_NAME: testd4
 
     steps:

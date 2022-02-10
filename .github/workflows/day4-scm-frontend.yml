@@ -91,8 +91,8 @@ jobs:
     environment: day4-scm-dev
     needs: [build-bicep, build-frontend]
     env:
-      RESOURCE_GROUP_NAME: rg-scm-devday4
-      RESOURCE_GROUP_LOCATION: westeurope
+      RESOURCE_GROUP_NAME: miriuk
+      RESOURCE_GROUP_LOCATION: uksouth
       ENV_NAME: devd4
 
     steps:
@@ -169,7 +169,7 @@ jobs:
     needs: deploy-to-dev
     env:
       RESOURCE_GROUP_NAME: rg-scm-testday4
-      RESOURCE_GROUP_LOCATION: westeurope
+      RESOURCE_GROUP_LOCATION: uksouth
       ENV_NAME: testd4
 
     steps:
