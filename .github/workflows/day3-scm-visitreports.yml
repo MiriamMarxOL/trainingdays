@@ -28,7 +28,7 @@ env:
 
 jobs:
   build-bicep:
-    if: github.repository == 'azuredevcollege/trainingdays'
+    if: github.repository == 'MiriamMarxOL/trainingdays'
     runs-on: ubuntu-latest
     env:
       BICEP_FILE_PATH: "./day3/apps/infrastructure/bicep/visitreports/visitreportsmain.bicep"
@@ -52,7 +52,7 @@ jobs:
           retention-days: 30
 
   build-api:
-    if: github.repository == 'azuredevcollege/trainingdays'
+    if: github.repository == 'MiriamMarxOL/trainingdays'
     runs-on: ubuntu-latest
     env:
       API_PROJECT_PATH: "./day3/apps/nodejs/visitreport"
@@ -94,7 +94,7 @@ jobs:
           retention-days: 30
 
   build-ta:
-    if: github.repository == 'azuredevcollege/trainingdays'
+    if: github.repository == 'MiriamMarxOL/trainingdays'
     runs-on: ubuntu-latest
     env:
       TA_PROJECT_PATH: "./day3/apps/nodejs/textanalytics"
@@ -138,7 +138,7 @@ jobs:
           retention-days: 30
 
   deploy-infrastructure-to-dev:
-    if: (github.repository == 'azuredevcollege/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
+    if: (github.repository == 'MiriamMarxOL/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
     runs-on: ubuntu-latest
     environment: day3-scm-dev
     needs: [build-bicep, build-api, build-ta]
@@ -148,7 +148,7 @@ jobs:
 
     env:
       RESOURCE_GROUP_NAME: rg-scm-devday3
-      RESOURCE_GROUP_LOCATION: westeurope
+      RESOURCE_GROUP_LOCATION: uksouth
       ENV_NAME: devd3
 
     steps:
@@ -227,7 +227,7 @@ jobs:
           package: ./${{ env.TA_PACKAGE_NAME }}
 
   deploy-infrastructure-to-test:
-    if: (github.repository == 'azuredevcollege/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
+    if: (github.repository == 'MiriamMarxOL/trainingdays') && ((github.event_name == 'push') || (github.event_name == 'workflow_dispatch'))
     runs-on: ubuntu-latest
     environment: day3-scm-test
     needs: [deploy-visitreportapi-to-dev, deploy-textanalytics-to-dev]
@@ -237,7 +237,7 @@ jobs:
 
     env:
       RESOURCE_GROUP_NAME: rg-scm-testday3
-      RESOURCE_GROUP_LOCATION: westeurope
+      RESOURCE_GROUP_LOCATION: uksouth
       ENV_NAME: testd3
 
     steps:
