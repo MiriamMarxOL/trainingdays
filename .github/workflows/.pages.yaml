@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    if: github.repository == 'azuredevcollege/trainingdays'
+    if: github.repository == 'MiriamMarxOL/trainingdays'
     runs-on: ubuntu-latest
 
     steps:

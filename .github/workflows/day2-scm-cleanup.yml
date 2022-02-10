@@ -5,7 +5,7 @@ on:
 
 jobs:
   destroy:
-    if: github.repository == 'azuredevcollege/trainingdays'
+    if: github.repository == 'MiriamMarxOL/trainingdays'
     runs-on: ubuntu-latest
     env:
       RG_DEV: rg-scm-devday2
